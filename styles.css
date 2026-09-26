@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Sergio Ruelas — portfolio
+   Aesthetic: bold dark, one accent
+   ========================================================================== */
+
+:root {
+  --bg: #0a0a0c;
+  --bg-raise: #101013;
+  --ink: #f4f1ea;
+  --ink-dim: #a3a09a;
+  --ink-faint: #5c5a56;
+  --hairline: #222226;
+  --accent: #ff5a1f;
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --w-max: 1240px;
+  --pad-x: clamp(20px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  scroll-behavior: smooth;
+  /* subtle grain over the whole page */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  font-stretch: 78%;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 140ms ease;
+}
+a:hover { color: var(--accent); }
+
+/* ================================ HERO ================================ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--pad-x);
+  padding-bottom: clamp(48px, 8vh, 96px);
+  overflow: hidden;
+}
+
+/* atmospheric backdrop: top glow + faint column grid */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 70% at 50% -10%, rgba(255, 90, 31, 0.16), transparent 60%),
+    radial-gradient(60% 45% at 85% 110%, rgba(255, 90, 31, 0.07), transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% / 6 - 1px),
+      rgba(244, 241, 234, 0.045) calc(100% / 6 - 1px),
+      rgba(244, 241, 234, 0.045) calc(100% / 6)
+    );
+  pointer-events: none;
+}
+
+.hero-frame { position: relative; }
+
+.hero-kicker {
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 600;
+  font-stretch: 100%;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: clamp(16px, 2.5vh, 28px);
+}
+
+.hero-name {
+  font-size: clamp(56px, 15.5vw, 218px);
+  font-weight: 900;
+  font-stretch: 118%;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.hero-name .line { display: block; }
+
+.hero-tagline {
+  margin-top: clamp(18px, 3vh, 32px);
+  font-size: clamp(20px, 3.4vw, 44px);
+  font-weight: 500;
+  font-stretch: 105%;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.hero-meta {
+  margin-top: clamp(20px, 3.5vh, 36px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  font-size: clamp(12px, 1.3vw, 15px);
+  font-weight: 500;
+  font-stretch: 90%;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.hero-meta span + span::before {
+  content: "·";
+  color: var(--accent);
+  margin-right: 14px;
+}
+
+.scroll-cue {
+  position: absolute;
+  right: var(--pad-x);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 0;
+}
+.scroll-cue__line {
+  width: 1px;
+  height: clamp(48px, 8vh, 84px);
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+/* =============================== SECTIONS =============================== */
+
+.section {
+  border-top: 1px solid var(--hairline);
+  padding: clamp(64px, 11vh, 128px) var(--pad-x);
+}
+
+.section-inner { max-width: var(--w-max); margin: 0 auto; }
+
+.section-index {
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+  font-stretch: 100%;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+}
+
+.section-title {
+  margin-top: 12px;
+  font-size: clamp(40px, 7vw, 96px);
+  font-weight: 800;
+  font-stretch: 115%;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.lede {
+  margin-top: clamp(28px, 4vh, 44px);
+  max-width: 62ch;
+  font-size: clamp(19px, 2.3vw, 28px);
+  font-weight: 400;
+  font-stretch: 88%;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+.lede strong { color: var(--ink); font-weight: 600; }
+
+/* ================================ ROLES ================================ */
+
+.role { margin-top: clamp(44px, 7vh, 72px); }
+.role + .role { margin-top: clamp(56px, 8vh, 88px); }
+
+.role-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 8px 24px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 18px;
+}
+
+.role-title {
+  font-size: clamp(24px, 3.6vw, 44px);
+  font-weight: 700;
+  font-stretch: 108%;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.role-org {
+  grid-column: 1;
+  margin-top: 6px;
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 500;
+  font-stretch: 92%;
+  color: var(--ink-dim);
+}
+.role-note { color: var(--ink-faint); }
+
+.role-dates {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  font-size: clamp(13px, 1.5vw, 16px);
+  font-weight: 500;
+  font-stretch: 92%;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.role-points {
+  list-style: none;
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+}
+.role-points li {
+  position: relative;
+  padding-left: 28px;
+  max-width: 72ch;
+  font-size: clamp(15px, 1.7vw, 18px);
+  font-stretch: 88%;
+  color: var(--ink-dim);
+}
+.role-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 14px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* =============================== EDUCATION =============================== */
+
+.edu-row {
+  margin-top: clamp(28px, 4vh, 44px);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.edu-degree {
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 700;
+  font-stretch: 105%;
+  line-height: 1.15;
+}
+
+.edu-org {
+  margin-top: 6px;
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 500;
+  font-stretch: 92%;
+  color: var(--ink-dim);
+}
+
+.edu-dates {
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+}
+
+.edu-extra {
+  margin-top: 18px;
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-stretch: 92%;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+/* ================================ FOOTER ================================ */
+
+.footer {
+  border-top: 1px solid var(--hairline);
+  background:
+    radial-gradient(90% 120% at 50% 130%, rgba(255, 90, 31, 0.14), transparent 60%),
+    var(--bg-raise);
+  padding: clamp(64px, 11vh, 128px) var(--pad-x) clamp(40px, 6vh, 64px);
+}
+
+.footer-inner { max-width: var(--w-max); margin: 0 auto; }
+
+.footer-kicker {
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 600;
+  font-stretch: 100%;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.footer-email {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: clamp(28px, 6.5vw, 88px);
+  font-weight: 800;
+  font-stretch: 112%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.footer-links {
+  list-style: none;
+  margin-top: clamp(28px, 4vh, 44px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+.footer-links a {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: 95%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.footer-links a:hover {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.footer-fine {
+  margin-top: clamp(40px, 6vh, 64px);
+  font-size: 12px;
+  font-stretch: 92%;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+/* =============================== RESPONSIVE =============================== */
+
+@media (max-width: 720px) {
+  .role-head {
+    grid-template-columns: 1fr;
+  }
+  .role-dates {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 6px;
+    white-space: normal;
+  }
+  .role-org { grid-column: 1; }
+  .scroll-cue { display: none; }
+  .hero { justify-content: flex-end; }
+  .footer-links a { padding: 12px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
