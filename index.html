@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sergio Ruelas — Aerospace Software Engineer</title>
+  <meta name="description" content="Sergio Ruelas — Aerospace Software Engineer. Avionics, RTOS, ARINC 429, local LLM infrastructure, and Python education." />
+  
+  <meta property="og:title" content="Sergio Ruelas — Aerospace Software Engineer" />
+  <meta property="og:description" content="Aerospace Software Engineer specializing in Avionics, RTOS, ARINC 429, and local LLM infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sergiowolfpac.github.io/" />
+  <meta property="og:image" content="https://sergiowolfpac.github.io/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================= HERO ======================= -->
+  <header class="hero" id="top">
+    <div class="hero-frame">
+      <p class="hero-kicker">Chicago, IL</p>
+      <h1 class="hero-name">
+        <span class="line">SERGIO</span>
+        <span class="line">RUELAS</span>
+      </h1>
+      <p class="hero-tagline">Aerospace Software Engineer</p>
+      <div class="hero-meta" aria-label="Key facts">
+        <span>Avionics · RTOS · ARINC 429</span>
+        <span>Local LLM Infrastructure</span>
+        <span>UIC Graduate</span>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span class="scroll-cue__line"></span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= ABOUT ======================= -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <p class="section-index">01</p>
+        <h2 class="section-title">About</h2>
+        <p class="lede">
+          Software Engineer based in Chicago, IL with four years of experience
+          building FAA certified in-flight software at Universal Avionics.
+          Seeking new opportunities that can utilize my history of writing
+          clean, readable, and maintainable code that has been deployed
+          globally across many various aircraft. You can now find me fully
+          researching and deploying local LLM implementations under strict
+          hardware limitations using the most recent model releases and
+          toolkits such as Qwen3.8 and llama.cpp. Having worked with strict
+          budget constraints before, I look forward to the inevitable
+          problem of token optimization and agent efficiency.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= EXPERIENCE ======================= -->
+    <section class="section" id="experience">
+      <div class="section-inner">
+        <p class="section-index">02</p>
+        <h2 class="section-title">Experience</h2>
+
+        <article class="role">
+          <div class="role-head">
+            <h3 class="role-title">Software Engineer</h3>
+            <p class="role-org">Universal Avionics Systems Corporation</p>
+            <p class="role-dates">June 2022 – March 2026</p>
+          </div>
+          <ul class="role-points">
+            <li>
+              Refactored legacy C control logic for flight systems using
+              ARINC&nbsp;429 protocols in a real-time operating system, reaching
+              100% code coverage and reducing complexity.
+            </li>
+            <li>
+              Ran assembler coverage analysis and source-code traceability
+              audits verifying compiler output against requirements for two
+              major software releases.
+            </li>
+            <li>
+              Diagnosed and patched a critical race condition in a
+              multi-threaded, in-flight Python application, preventing data
+              corruption during flight tests.
+            </li>
+            <li>
+              Spearheaded the v1.0 in-flight data-gathering suite in Python —
+              a single reliable executable that cut costly in-flight test hours.
+            </li>
+            <li>
+              Built a Python verification pipeline comparing C object files,
+              saving roughly a full day of manual validation per release cycle.
+            </li>
+            <li>
+              Delivered 200+ Jira resolutions across the stack (C, C++, C#,
+              Java): system integrations, architectural changes, UI features,
+              and error handling.
+            </li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-head">
+            <h3 class="role-title">Python Instructor</h3>
+            <p class="role-org">Paper Airplanes <span class="role-note">(Non-Profit)</span></p>
+            <p class="role-dates">December 2021 – June 2022</p>
+          </div>
+          <ul class="role-points">
+            <li>Taught and mentored a class of 12 students — all earned certification.</li>
+            <li>
+              Pioneered 14 Python lesson plans on Google Colab with example
+              code, from data structures to machine learning.
+            </li>
+            <li>
+              Produced instructional videos and resources shared with future
+              instructors to standardize the program.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================= PROJECTS ======================= -->
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <p class="section-index">03</p>
+        <h2 class="section-title">Projects</h2>
+
+        <article class="role">
+          <div class="role-head">
+            <h3 class="role-title">Local AI Agent Infrastructure</h3>
+            <p class="role-org">Docker &amp; Llama.cpp</p>
+            <p class="role-dates">August 2026</p>
+          </div>
+          <ul class="role-points">
+            <li>
+              Deployed a local LLM inference pipeline on Docker, Nvidia CUDA,
+              and llama.cpp to host and test quantized and fine-tuned models
+              (Qwen3.8 27B, DeepSeek) inside a Linux CLI development environment.
+            </li>
+            <li>
+              Integrated local LLM backends into Godot 4.x via C++/CMake-based
+              MCP bridges — assisting GDScript generation, driving iterative
+              feature work, and recovering codebases with git.
+            </li>
+            <li>
+              Engineered document state-transfer and session-recovery protocols
+              for AI agent continuity — resolving system deadlocks and
+              mitigating VRAM constraints at context-compaction thresholds.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================= EDUCATION ======================= -->
+    <section class="section" id="education">
+      <div class="section-inner">
+        <p class="section-index">04</p>
+        <h2 class="section-title">Education</h2>
+        <div class="edu-row">
+          <div>
+            <h3 class="edu-degree">B.S. Computer Science, Software Engineering</h3>
+            <p class="edu-org">University of Illinois at Chicago</p>
+          </div>
+          <p class="edu-dates">2021</p>
+        </div>
+        <p class="edu-extra">Languages — English (Native), Spanish</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <p class="footer-kicker">Get in touch</p>
+      <a class="footer-email" href="mailto:Sergio@mailbox.org">Sergio@mailbox.org</a>
+      <ul class="footer-links">
+        <li><a href="https://github.com/sergiowolfpac" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/sergiowolfpac" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="tel:+13126072293">(312) 607-2293</a></li>
+      </ul>
+      <p class="footer-fine">© 2026 Sergio Ruelas · Chicago, IL</p>
+    </div>
+  </footer>
+
+</body>
+</html>
