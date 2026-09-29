@@ -187,7 +187,7 @@ a:hover { color: var(--accent); }
   padding: clamp(64px, 11vh, 128px) var(--pad-x);
 }
 
-.section-inner { max-width: var(--w-max); margin: 0 auto; }
+.section-inner { max-width: var(--w-max); margin: 0; }
 
 .section-index {
   font-size: clamp(13px, 1.4vw, 16px);
@@ -291,7 +291,7 @@ a:hover { color: var(--accent); }
 .edu-row {
   margin-top: clamp(28px, 4vh, 44px);
   display: flex;
-  align-items: baseline;
+  align-items: start;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
@@ -337,7 +337,7 @@ a:hover { color: var(--accent); }
   padding: clamp(64px, 11vh, 128px) var(--pad-x) clamp(40px, 6vh, 64px);
 }
 
-.footer-inner { max-width: var(--w-max); margin: 0 auto; }
+.footer-inner { max-width: var(--w-max); margin: 0; }
 
 .footer-kicker {
   font-size: clamp(11px, 1.2vw, 14px);
