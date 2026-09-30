@@ -17,7 +17,7 @@
   --bg-raise: #101013;
   --ink: #f4f1ea;
   --ink-dim: #a3a09a;
-  --ink-faint: #76746f;
+  --ink-faint: #939089;
   --hairline: #222226;
   --accent: #ff5a1f;
 
@@ -76,10 +76,51 @@ a {
 }
 a:hover { color: var(--accent); }
 
+/* =============================== TOP NAV =============================== */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.topnav__mark {
+  font-size: 18px;
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: 0.04em;
+}
+
+.topnav__links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: clamp(11px, 1.1vw, 13px);
+  font-weight: 600;
+  font-stretch: 100%;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.topnav__links a { color: var(--ink-dim); }
+.topnav__links a:hover { color: var(--accent); }
+
 /* ================================ HERO ================================ */
 
 .hero {
   position: relative;
+  min-height: 100vh; /* fallback for browsers without svh */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -89,7 +130,7 @@ a:hover { color: var(--accent); }
   overflow: hidden;
 }
 
-/* atmospheric backdrop: top glow + faint column grid */
+/* backdrop with top glow & faint column grid */
 .hero::before {
   content: "";
   position: absolute;
@@ -216,7 +257,6 @@ a:hover { color: var(--accent); }
   line-height: 1.5;
   color: var(--ink-dim);
 }
-.lede strong { color: var(--ink); font-weight: 600; }
 
 /* ================================ ROLES ================================ */
 
@@ -406,9 +446,10 @@ a:hover { color: var(--accent); }
   }
   .role-org { grid-column: 1; }
   .scroll-cue { display: none; }
-  .hero { justify-content: flex-end; }
   .footer-links a { padding: 12px 18px; }
 }
+
+.section, .footer { scroll-margin-top: 60px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
